@@ -36,15 +36,22 @@ const products = [
     title: "Jegging Pants",
     price: "₹699",
     image:
-      "https://img.freepik.com/free-photo/young-woman-wearing-jeggings-posing_176420-30133.jpg",
+    "https://img.freepik.com/free-photo/young-handsome-man-posing-white-wall_176420-30137.jpg",
+  },
+  {
+    id: 6,
+    title: "Summer Shorts",
+    price: "₹599",
+    image:
+    "https://img.freepik.com/free-photo/young-woman-wearing-jeggings-posing_176420-30133.jpg",
   },
 ];
 
 const ProductsPage = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <div className="p-4 md:p-8 max-w-screen-xl mx-auto">
-        <h1 className="text-3xl font-extrabold text-center text-gray-900 mb-6">
+      <div className="w-full max-w-screen-xl mx-auto">
+        <h1 className="mt-5 text-3xl font-extrabold text-center text-gray-900 mb-6">
           ✨ Explore Our Signature Collection
         </h1>
 
@@ -61,7 +68,7 @@ const ProductsPage = () => {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="p-4 sm:p-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {products.map((product) => (
             <div
               key={product.id}
