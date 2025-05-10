@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import Contact from "./Contact";
+import { Link } from "react-router-dom";
 
 const CollectionsPage = () => {
   const featuredCollections = [
@@ -85,9 +86,9 @@ const CollectionsPage = () => {
 
       <div className="p-2 grid grid-cols-12 gap-6 mb-16">
         {featuredCollections.map((item, index) => (
-          <a
+          <Link
             key={item.slug}
-            href={`/collections/${item.slug}`}
+            to={`/products`}
             className={`group block overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 ${
               index === 0
                 ? "col-span-12 md:col-span-6 row-span-2"
@@ -109,7 +110,7 @@ const CollectionsPage = () => {
                 </div>
               </div>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
 
@@ -119,9 +120,9 @@ const CollectionsPage = () => {
 
       <div className="mb-5 p-2 grid grid-cols-12 gap-4">
         {moreCollections.map((item, index) => (
-          <a
+          <Link
             key={item.slug}
-            href={`/collections/${item.slug}`}
+            to={`/products`}
             className={`group block overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-transform transform hover:scale-105 ${
               index % 3 === 0
                 ? "col-span-12 md:col-span-8 row-span-2"
@@ -143,7 +144,7 @@ const CollectionsPage = () => {
                 </div>
               </div>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
 

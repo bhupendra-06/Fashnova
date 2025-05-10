@@ -13,8 +13,6 @@ import Footer from "./Footer";
 import Contact from "./Contact";
 import Logo from "../assets/logo.png"; // Importing logo image
 
-
-
 const products = [
   {
     id: 1,
@@ -86,7 +84,7 @@ const ClothingBrand = () => {
             duration={500}
             className="text-xl sm:text-3xl font-mono font-bold tracking-tight text-pink-600 cursor-pointer"
           >
-            <img alt="logo" src={Logo} className="h-14 sm:h-20"/>
+            <img alt="logo" src={Logo} className="h-14 sm:h-20" />
           </Link>
           <div className="sm:hidden">
             <button
@@ -119,7 +117,7 @@ const ClothingBrand = () => {
             </button>
           </div>
           <nav
-            className={`${
+            className={`transition-all duration-300 ease-in-out ${ 
               isMenuOpen
                 ? "block w-full absolute bg-white *:border top-14 left-0"
                 : "hidden"
@@ -180,10 +178,14 @@ const ClothingBrand = () => {
             statements.
           </p>
           <div className="mx-auto max-w-fit flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
-            <button className="bg-pink-600 text-white px-6 md:px-8 py-3 rounded-full hover:bg-pink-700 transition transform hover:scale-105">
+            <button className="bg-pink-600 text-white px-6 md:px-8 py-3 rounded-full shadow-lg hover:bg-pink-700 transition-all duration-300 transform hover:scale-105 hover:shadow-pink-400/50 active:scale-95">
               Shop Now
             </button>
-            <button onClick={()=> {navigate('/collections')}} className="bg-transparent border-2 border-white text-white px-6 md:px-8 py-3 rounded-full hover:bg-white hover:text-gray-900 transition transform hover:scale-105">
+
+            <button
+              onClick={() => navigate("/collections")}
+              className="bg-transparent border-2 border-white text-white px-6 md:px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 hover:bg-white hover:text-gray-900 hover:shadow-white/50 active:scale-95"
+            >
               Explore Collections
             </button>
           </div>
@@ -253,10 +255,10 @@ const ClothingBrand = () => {
       </section>
 
       {/* Contact Section */}
-      <Contact/>
+      <Contact />
 
       {/* Footer */}
-      <Footer/>
+      <Footer />
     </div>
   );
 };
