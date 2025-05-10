@@ -6,7 +6,7 @@ import {
   FaInstagram,
   FaTwitter,
 } from "react-icons/fa"; // Importing icons from react-icons
-import { useState } from "react"; // Importing useState hook from React
+import { useState, useEffect } from "react"; // Importing useState hook from React
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-scroll"; // Link component from react-scroll
 import Footer from "./Footer";
@@ -71,6 +71,10 @@ const products = [
 ];
 
 const ClothingBrand = () => {
+   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []); // This will trigger when the component is mounted
+
   const navigate = useNavigate(); // Hook to navigate
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage mobile menu visibility
   return (
@@ -117,7 +121,7 @@ const ClothingBrand = () => {
             </button>
           </div>
           <nav
-            className={`transition-all duration-300 ease-in-out ${ 
+            className={`transition-all duration-300 ease-in-out ${
               isMenuOpen
                 ? "block w-full absolute bg-white *:border top-14 left-0"
                 : "hidden"
@@ -178,7 +182,10 @@ const ClothingBrand = () => {
             statements.
           </p>
           <div className="mx-auto max-w-fit flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
-            <button className="bg-pink-600 text-white px-6 md:px-8 py-3 rounded-full shadow-lg hover:bg-pink-700 transition-all duration-300 transform hover:scale-105 hover:shadow-pink-400/50 active:scale-95">
+            <button
+              onClick={() => navigate("/collections")}
+              className="bg-pink-600 text-white px-6 md:px-8 py-3 rounded-full shadow-lg hover:bg-pink-700 transition-all duration-300 transform hover:scale-105 hover:shadow-pink-400/50 active:scale-95"
+            >
               Shop Now
             </button>
 

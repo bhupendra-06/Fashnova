@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import Contact from "./Contact";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const CollectionsPage = () => {
   const featuredCollections = [
@@ -68,8 +69,12 @@ const CollectionsPage = () => {
   ];
 
   const navigate = useNavigate();
+   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []); // This will trigger when the component is mounted
 
   return (
+    
     <div className="max-w-7xl mx-auto">
       <button
         onClick={() => {
@@ -99,6 +104,7 @@ const CollectionsPage = () => {
               <img
                 src={item.image}
                 alt={item.title}
+                loading="lazy"
                 className="w-full h-full object-cover rounded-3xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition duration-300">
@@ -133,6 +139,7 @@ const CollectionsPage = () => {
               <img
                 src={item.image}
                 alt={item.title}
+                loading="lazy"
                 className="w-full h-full object-cover rounded-xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/75 opacity-100 transition duration-300">

@@ -1,6 +1,7 @@
 import React from "react";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import { useEffect } from "react";
 
 const products = [
   {
@@ -48,6 +49,9 @@ const products = [
 ];
 
 const ProductsPage = () => {
+   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []); // This will trigger when the component is mounted
   return (
     <div className="bg-gray-50 min-h-screen">
       <div className="w-full max-w-screen-xl mx-auto">
