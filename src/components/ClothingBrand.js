@@ -1,17 +1,12 @@
 import React from "react";
-import {
-  FaStar,
-  FaHeart,
-  FaFacebook,
-  FaInstagram,
-  FaTwitter,
-} from "react-icons/fa"; // Importing icons from react-icons
-import { useState, useEffect } from "react"; // Importing useState hook from React
+import { FaStar, FaHeart } from "react-icons/fa"; // Importing icons from react-icons
+import { useEffect } from "react"; // Importing useState hook from React
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-scroll"; // Link component from react-scroll
 import Footer from "./Footer";
 import Contact from "./Contact";
-import Logo from "../assets/logo.png"; // Importing logo image
+import TrustBadges from "./TrustBadges";
+import Navbar from "./Navbar";
+import Testimonials from "./Testimonials";
 
 const products = [
   {
@@ -48,7 +43,7 @@ const products = [
     category: "Accessories",
     tag: "New",
     image:
-      "https://img.freepik.com/free-photo/designed-sunglasses-red-book-grey-surface_140725-14161.jpg?ga=GA1.1.329723159.1744260162&semt=ais_hybrid&w=740",
+      "https://img.freepik.com/free-photo/sun-glasses-table_140725-7460.jpg?ga=GA1.1.329723159.1744260162&semt=ais_hybrid&w=740",
   },
   {
     id: 5,
@@ -57,7 +52,7 @@ const products = [
     category: "Shoes",
     tag: "Best Seller",
     image:
-      "https://img.freepik.com/free-photo/pair-casual-sneakers-laces_1150-13356.jpg?w=996&t=st=1715080000~exp=1715080600~hmac=mno",
+      "https://img.freepik.com/free-photo/fashion-shoes-sneakers_1203-7529.jpg?ga=GA1.1.329723159.1744260162&semt=ais_hybrid&w=740",
   },
   {
     id: 6,
@@ -71,106 +66,20 @@ const products = [
 ];
 
 const ClothingBrand = () => {
-   useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []); // This will trigger when the component is mounted
 
   const navigate = useNavigate(); // Hook to navigate
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage mobile menu visibility
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-white to-pink-50 text-gray-800 scroll-smooth">
-      {/* Navbar */}
-      <header className="bg-white shadow sticky top-0 left-0 right-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <Link
-            to="hero"
-            smooth={true}
-            duration={500}
-            className="text-xl sm:text-3xl font-mono font-bold tracking-tight text-pink-600 cursor-pointer"
-          >
-            <img alt="logo" src={Logo} className="h-14 sm:h-20" />
-          </Link>
-          <div className="sm:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-800 focus:outline-none absolute right-4 top-4"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {isMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
-            </button>
-          </div>
-          <nav
-            className={`transition-all duration-300 ease-in-out ${
-              isMenuOpen
-                ? "block w-full absolute bg-white *:border top-14 left-0"
-                : "hidden"
-            } sm:flex text-center text-sm font-medium cursor-pointer`}
-          >
-            <Link
-              to="hero"
-              smooth={true}
-              duration={500}
-              onClick={() => setIsMenuOpen(false)}
-              className="p-4 hover:text-pink-600 hover:bg-pink-100 block sm:inline duration-100"
-            >
-              Home
-            </Link>
-            <Link
-              to="products"
-              smooth={true}
-              duration={500}
-              onClick={() => setIsMenuOpen(false)}
-              className="p-4 hover:text-pink-600 hover:bg-pink-100 block sm:inline duration-100"
-            >
-              Products
-            </Link>
-            <Link
-              to="about"
-              smooth={true}
-              duration={500}
-              onClick={() => setIsMenuOpen(false)}
-              className="p-4 hover:text-pink-600 hover:bg-pink-100 block sm:inline duration-100"
-            >
-              About
-            </Link>
-            <Link
-              to="contact"
-              smooth={true}
-              duration={500}
-              onClick={() => setIsMenuOpen(false)}
-              className="p-4 hover:text-pink-600 hover:bg-pink-100 block sm:inline duration-100"
-            >
-              Contact
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <Navbar />
 
       {/* Hero Section */}
       <section
         id="hero"
-        className="relative bg-[url('https://img.freepik.com/premium-photo/blur-clothing-store-wall-shopping-mall_293060-2610.jpg?ga=GA1.1.329723159.1744260162&semt=ais_hybrid&w=740')] bg-cover bg-center h-[90vh] flex items-center justify-center px-6 text-white"
+        className="relative bg-[url('https://img.freepik.com/premium-photo/blur-clothing-store-wall-shopping-mall_293060-2610.jpg?ga=GA1.1.329723159.1744260162&semt=ais_hybrid&w=740')] bg-cover bg-center mt-12 sm:mt-20 h-[90vh] flex items-center justify-center px-6 text-white"
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50"></div>
         <div className="relative z-10 text-center max-w-xl mx-auto p-6 md:p-10 rounded-xl">
@@ -200,7 +109,7 @@ const ClothingBrand = () => {
       </section>
 
       {/* Featured Products */}
-      <section id="products" className="py-20 px-4 md:px-16">
+      <section id="products" className="pt-20 px-4 md:px-16">
         <h2 className="text-3xl font-bold mb-10 text-center">
           Our Picks for You
         </h2>
@@ -214,6 +123,7 @@ const ClothingBrand = () => {
                 <img
                   src={product.image}
                   alt={product.name}
+                  loading= "lazy"
                   className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <span className="absolute top-3 left-3 bg-pink-600 text-white text-xs px-3 py-1 rounded-full">
@@ -252,7 +162,7 @@ const ClothingBrand = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4 md:px-16 text-center">
+      <section id="about" className="pt-20 pb-12 px-4 md:px-16 text-center">
         <h2 className="text-3xl font-bold mb-6">About Us</h2>
         <p className="max-w-2xl mx-auto text-gray-600">
           Fashnova brings you trendsetting clothing and accessories at
@@ -261,13 +171,17 @@ const ClothingBrand = () => {
         </p>
       </section>
 
-      {/* Contact Section */}
+      <TrustBadges />
+      <Testimonials />
       <Contact />
-
-      {/* Footer */}
       <Footer />
     </div>
   );
 };
 
+
+
+
 export default ClothingBrand;
+
+

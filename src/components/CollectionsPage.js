@@ -104,7 +104,7 @@ const CollectionsPage = () => {
               <img
                 src={item.image}
                 alt={item.title}
-                loading="lazy"
+                loading="eager"
                 className="w-full h-full object-cover rounded-3xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition duration-300">
