@@ -81,7 +81,7 @@ const ProductsPage = () => {
               <img
                 src={product.image}
                 alt={product.title}
-                className="w-64 aspect-[3/4] sm:aspect-square object-cover rounded-t-xl"
+                className="sm:w-full aspect-[3/4] sm:aspect-auto object-cover rounded-t-xl"
               />
               <div className="p-4">
                 <h2 className="text-md font-semibold text-gray-900 mb-1">
@@ -91,10 +91,10 @@ const ProductsPage = () => {
                   {product.price}
                 </p>
                 <div className="flex gap-2">
-                  <button className="flex-1 bg-pink-600 text-white py-2 px-2 rounded-full hover:bg-pink-700 transition">
+                  <button className="flex-1 bg-pink-600 text-white py-2 px-2 rounded-lg hover:bg-pink-700 transition">
                     Add to Cart
                   </button>
-                  <button className="hidden sm:block sm:flex-1 bg-gray-200 text-gray-700 py-2 px-2 rounded-full hover:bg-gray-300 transition text-sm">
+                  <button className="hidden sm:block sm:flex-1 bg-gray-200 text-gray-700 py-2 px-2 rounded-lg hover:bg-gray-300 transition text-sm">
                     Quick View
                   </button>
                 </div>
@@ -103,12 +103,6 @@ const ProductsPage = () => {
           ))}
         </div>
 
-        {/* CTA Button */}
-        <div className="my-10 text-center">
-          <button className="bg-pink-600 text-white py-3 px-6 rounded-full hover:bg-pink-700 transition text-lg font-semibold shadow-md">
-            View Full Collection
-          </button>
-        </div>
 
         {/* Contact & Footer */}
         <Contact />
