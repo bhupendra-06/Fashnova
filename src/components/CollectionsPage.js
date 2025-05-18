@@ -80,7 +80,7 @@ const CollectionsPage = () => {
         onClick={() => {
           navigate("/");
         }}
-        className="hidden sm:flex text-white px-4 py-2 rounded-md mt-4 ml-4 bg-pink-500 font-semibold hover:bg-pink-600 transition duration-300  items-center absolute top-0 left-0"
+        className="hidden md:flex text-gray-200 px-4 py-2 rounded-md mt-4 ml-4 bg-gray-900 font-semibold hover:bg-gray-800 transition duration-300 items-center absolute top-0 left-0"
       >
         <FaArrowLeft />
         <span className="ml-2">Go Back</span>

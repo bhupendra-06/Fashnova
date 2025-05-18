@@ -86,7 +86,16 @@ const Navbar = () => {
             smooth={true}
             duration={500}
             onClick={() => setIsMenuOpen(false)}
-            className="p-4 hover:text-pink-600 hover:bg-pink-100 block sm:inline duration-100"
+            className="sm:hidden p-4 hover:text-pink-600 hover:bg-pink-100 block duration-100"
+          >
+            Contact
+          </Link>
+                    <Link
+            to="contact"
+            smooth={true}
+            duration={500}
+            onClick={() => setIsMenuOpen(false)}
+            className="hidden sm:block ml-4 bg-pink-600 text-white px-6 py-4 rounded-full shadow-sm hover:bg-pink-700 transition-all duration-300 hover:scale-105 hover:drop-shadow-sm active:scale-95"
           >
             Contact
           </Link>

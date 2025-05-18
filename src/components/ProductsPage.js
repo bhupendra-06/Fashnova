@@ -72,7 +72,7 @@ const ProductsPage = () => {
         </div>
 
         {/* Products Grid */}
-        <div className="p-4 sm:p-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="p-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
           {products.map((product) => (
             <div
               key={product.id}
@@ -94,7 +94,7 @@ const ProductsPage = () => {
                   <button className="flex-1 bg-pink-600 text-white py-2 px-2 rounded-lg hover:bg-pink-700 transition">
                     Add to Cart
                   </button>
-                  <button className="hidden sm:block sm:flex-1 bg-gray-200 text-gray-700 py-2 px-2 rounded-lg hover:bg-gray-300 transition text-sm">
+                  <button className="hidden md:block md:flex-1 bg-gray-200 text-gray-700 py-2 px-2 rounded-lg hover:bg-gray-300 transition text-sm">
                     Quick View
                   </button>
                 </div>

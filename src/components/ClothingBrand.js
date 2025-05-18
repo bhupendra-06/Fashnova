@@ -81,23 +81,26 @@ const ClothingBrand = () => {
         id="hero"
         className="relative bg-[url('https://img.freepik.com/premium-photo/blur-clothing-store-wall-shopping-mall_293060-2610.jpg?ga=GA1.1.329723159.1744260162&semt=ais_hybrid&w=740')] bg-cover bg-center mt-12 sm:mt-20 h-[90vh] flex items-center justify-center px-6 text-white"
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50"></div>
-        <div className="relative z-10 text-center max-w-xl mx-auto p-6 md:p-10 rounded-xl">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight leading-tight">
+        <div
+          className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-gray-600/50 to-transparent
+         transition duration-300"
+        ></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50"></div> */}
+        <div className="relative z-10 text-center  mx-auto p-6 md:p-10 rounded-xl">
+          <h1 className="text-[2.5rem] sm:text-6xl md:text-8xl max-w-3xl font-bold mb-4 tracking-tighter leading-10">
             Discover Your Signature Style
           </h1>
-          <p className="mb-6 text-base md:text-lg text-gray-200">
+          <p className="text-base sm:text-lg md:text-xl max-w-md mx-auto text-gray-200">
             Curated collections designed to empower you with bold fashion
             statements.
           </p>
-          <div className="mx-auto max-w-fit flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+          <div className="mx-auto mt-16 max-w-fit flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
             <button
               onClick={() => navigate("/collections")}
               className="bg-pink-600 text-white px-6 md:px-8 py-3 rounded-full shadow-lg hover:bg-pink-700 transition-all duration-300 transform hover:scale-105 hover:shadow-pink-400/50 active:scale-95"
             >
               Shop Now
             </button>
-
             <button
               onClick={() => navigate("/collections")}
               className="bg-transparent border-2 border-white text-white px-6 md:px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 hover:bg-white hover:text-gray-900 hover:shadow-white/50 active:scale-95"
@@ -123,7 +126,7 @@ const ClothingBrand = () => {
                 <img
                   src={product.image}
                   alt={product.name}
-                  loading= "lazy"
+                  loading="lazy"
                   className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <span className="absolute top-3 left-3 bg-pink-600 text-white text-xs px-3 py-1 rounded-full">
@@ -179,9 +182,4 @@ const ClothingBrand = () => {
   );
 };
 
-
-
-
 export default ClothingBrand;
-
-
