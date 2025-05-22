@@ -79,7 +79,7 @@ const ClothingBrand = () => {
       {/* Hero Section */}
       <section
         id="hero"
-        className="relative bg-[url('https://img.freepik.com/premium-photo/blur-clothing-store-wall-shopping-mall_293060-2610.jpg?ga=GA1.1.329723159.1744260162&semt=ais_hybrid&w=740')] bg-cover bg-center mt-12 sm:mt-20 h-[90vh] flex items-center justify-center px-6 text-white"
+        className="relative bg-[url('https://img.freepik.com/premium-photo/blur-clothing-store-wall-shopping-mall_293060-2610.jpg?ga=GA1.1.329723159.1744260162&semt=ais_hybrid&w=740')] bg-cover bg-center mt-12 sm:mt-20 h-[90vh] flex justify-center items-end sm:items-center pb-8 sm:pb-0 px-6 text-white"
       >
         <div
           className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-gray-600/50 to-transparent
@@ -87,7 +87,7 @@ const ClothingBrand = () => {
         ></div>
         {/* <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50"></div> */}
         <div className="relative z-10 text-center  mx-auto p-6 md:p-10 rounded-xl">
-          <h1 className="text-[2.5rem] sm:text-6xl md:text-8xl max-w-3xl font-bold mb-4 tracking-tighter leading-10">
+          <h1 className="text-[2.8rem] sm:text-6xl md:text-8xl max-w-3xl font-bold mb-4 tracking-tighter leading-10">
             Discover Your Signature Style
           </h1>
           <p className="text-base sm:text-lg md:text-xl max-w-md mx-auto text-gray-200">

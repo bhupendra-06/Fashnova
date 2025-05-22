@@ -69,90 +69,95 @@ const CollectionsPage = () => {
   ];
 
   const navigate = useNavigate();
-   useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []); // This will trigger when the component is mounted
 
   return (
-    
     <div className="max-w-7xl mx-auto">
       <button
         onClick={() => {
           navigate("/");
         }}
-        className="hidden md:flex text-gray-200 px-4 py-2 rounded-md mt-4 ml-4 bg-gray-900 font-semibold hover:bg-gray-800 transition duration-300 items-center absolute top-0 left-0"
+        className="hidden md:flex text-gray-200 px-6 py-2 rounded-md mt-4 ml-4 bg-gray-900 font-semibold hover:bg-gray-800 transition duration-300 items-center absolute top-0 left-0"
       >
         <FaArrowLeft />
         <span className="ml-2">Go Back</span>
       </button>
-      <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold mb-10 text-center text-gray-900 tracking-wide">
-        Featured Collections
-      </h1>
+      <div className="p-4">
+        <h1 className="mt-4 text-3xl sm:text-5xl font-extrabold mb-10 text-center text-gray-900 tracking-wide">
+          Featured Collections
+        </h1>
 
-      <div className="p-2 grid grid-cols-12 gap-6 mb-16">
-        {featuredCollections.map((item, index) => (
-          <Link
-            key={item.slug}
-            to={`/products`}
-            className={`group block overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 ${
-              index === 0
-                ? "col-span-12 md:col-span-6 row-span-2"
-                : "col-span-6 md:col-span-3"
-            }`}
-          >
-            <div className="relative h-full">
-              <img
-                src={item.image}
-                alt={item.title}
-                loading="eager"
-                className="w-full h-full object-cover rounded-3xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition duration-300">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h2 className="text-2xl sm:text-4xl font-bold">{item.title}</h2>
-                  <p className="text-sm mt-1 text-gray-200">
-                    Explore our exclusive {item.title} collection.
-                  </p>
+        <div className="mb-20 grid grid-cols-12 gap-6">
+          {featuredCollections.map((item, index) => (
+            <Link
+              key={item.slug}
+              to={`/products`}
+              className={`group block overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 ${
+                index === 0
+                  ? "col-span-12 md:col-span-6 row-span-2"
+                  : "col-span-6 md:col-span-3"
+              }`}
+            >
+              <div className="relative h-full">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading="eager"
+                  className="w-full h-full object-cover rounded-3xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50 opacity-0 group-hover:opacity-100 transition duration-300">
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h2 className="text-2xl sm:text-4xl font-bold">
+                      {item.title}
+                    </h2>
+                    <p className="text-sm mt-1 text-gray-200">
+                      Explore our exclusive {item.title} collection.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
-        ))}
-      </div>
+            </Link>
+          ))}
+        </div>
 
-      <h2 className="text-4xl font-bold mb-8 text-center text-gray-800 tracking-wide">
-        More Collections
-      </h2>
+        <h2 className="text-4xl font-bold mb-8 text-center text-gray-800 tracking-wide">
+          More Collections
+        </h2>
 
-      <div className="mb-5 p-2 grid grid-cols-12 gap-4">
-        {moreCollections.map((item, index) => (
-          <Link
-            key={item.slug}
-            to={`/products`}
-            className={`group block overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-transform transform hover:scale-105 ${
-              index % 3 === 0
-                ? "col-span-12 md:col-span-8 row-span-2"
-                : "col-span-6 md:col-span-4"
-            }`}
-          >
-            <div className="relative h-full">
-              <img
-                src={item.image}
-                alt={item.title}
-                loading="lazy"
-                className="w-full h-full object-cover rounded-xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/75 opacity-100 transition duration-300">
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h2 className="text-xl sm:text-3xl font-semibold">{item.title}</h2>
-                  <p className="text-sm mt-1 text-gray-200">
-                    Discover the best of {item.title} styles.
-                  </p>
+        <div className="mb-5 grid grid-cols-12 gap-4">
+          {moreCollections.map((item, index) => (
+            <Link
+              key={item.slug}
+              to={`/products`}
+              className={`group block overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-transform transform hover:scale-105 ${
+                index % 3 === 0
+                  ? "col-span-12 md:col-span-8 row-span-2"
+                  : "col-span-6 md:col-span-4"
+              }`}
+            >
+              <div className="relative h-full">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover rounded-xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/75 opacity-100 transition duration-300">
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h2 className="text-xl sm:text-3xl font-semibold">
+                      {item.title}
+                    </h2>
+                    <p className="text-sm mt-1 text-gray-200">
+                      Discover the best of {item.title} styles.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
 
       <Contact />

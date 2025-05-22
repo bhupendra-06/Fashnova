@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-scroll"; // Link component from react-scroll
 import Logo from "../assets/logo.png"; // Importing logo image
-import { useState } from "react"; // Importing useState hook from React
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage mobile menu visibility
@@ -15,15 +14,17 @@ const Navbar = () => {
           duration={500}
           className="text-xl sm:text-3xl font-mono font-bold tracking-tight text-pink-600 cursor-pointer"
         >
-          <img alt="logo" src={Logo} className="h-14 sm:h-20" />
+          <img alt="logo" src={Logo} className="h-16 sm:h-20" />
         </Link>
+
+        {/* Mobile menu toggle button */}
         <div className="sm:hidden">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-gray-800 focus:outline-none absolute right-4 top-4"
+            className="text-gray-800 focus:outline-none hover:scale-105 transition-transform absolute right-4 top-4"
           >
             <svg
-              className="w-6 h-6"
+              className="w-8 h-8"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -47,19 +48,14 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-        <nav
-          className={`transition-all duration-300 ease-in-out ${
-            isMenuOpen
-              ? "block w-full absolute bg-white *:border top-14 left-0"
-              : "hidden"
-          } sm:flex text-center text-sm font-medium cursor-pointer`}
-        >
+
+        {/* Desktop navigation */}
+        <nav className="hidden sm:flex items-center text-base font-medium">
           <Link
             to="hero"
             smooth={true}
             duration={500}
-            onClick={() => setIsMenuOpen(false)}
-            className="p-4 hover:text-pink-600 hover:bg-pink-100 block sm:inline duration-100"
+            className="p-4 hover:text-pink-600 hover:bg-pink-100 "
           >
             Home
           </Link>
@@ -67,8 +63,7 @@ const Navbar = () => {
             to="products"
             smooth={true}
             duration={500}
-            onClick={() => setIsMenuOpen(false)}
-            className="p-4 hover:text-pink-600 hover:bg-pink-100 block sm:inline duration-100"
+            className="p-4 hover:text-pink-600 hover:bg-pink-100"
           >
             Products
           </Link>
@@ -76,8 +71,7 @@ const Navbar = () => {
             to="about"
             smooth={true}
             duration={500}
-            onClick={() => setIsMenuOpen(false)}
-            className="p-4 hover:text-pink-600 hover:bg-pink-100 block sm:inline duration-100"
+            className="p-4 hover:text-pink-600 hover:bg-pink-100"
           >
             About
           </Link>
@@ -85,21 +79,59 @@ const Navbar = () => {
             to="contact"
             smooth={true}
             duration={500}
-            onClick={() => setIsMenuOpen(false)}
-            className="sm:hidden p-4 hover:text-pink-600 hover:bg-pink-100 block duration-100"
-          >
-            Contact
-          </Link>
-                    <Link
-            to="contact"
-            smooth={true}
-            duration={500}
-            onClick={() => setIsMenuOpen(false)}
-            className="hidden sm:block ml-4 bg-pink-600 text-white px-6 py-4 rounded-full shadow-sm hover:bg-pink-700 transition-all duration-300 hover:scale-105 hover:drop-shadow-sm active:scale-95"
+            className="ml-4 bg-pink-600 text-white px-6 py-4 rounded-full shadow-sm hover:bg-pink-700 transition-all duration-300 hover:scale-105 hover:drop-shadow-sm active:scale-95"
           >
             Contact
           </Link>
         </nav>
+      </div>
+
+      {/* Mobile dropdown menu */}
+      <div className="sm:hidden w-full">
+        <div
+          className={`transition-all duration-500 ease-in-out overflow-hidden ${
+            isMenuOpen ? "max-h-[500px]" : "max-h-0"
+          }`}
+        >
+          <nav className="flex flex-col bg-white border-t *:border border-gray-200 text-sm font-medium text-center">
+            <Link
+              to="hero"
+              smooth={true}
+              duration={500}
+              onClick={() => setIsMenuOpen(false)}
+              className="p-4 hover:text-pink-600 hover:bg-pink-100"
+            >
+              Home
+            </Link>
+            <Link
+              to="products"
+              smooth={true}
+              duration={500}
+              onClick={() => setIsMenuOpen(false)}
+              className="p-4 hover:text-pink-600 hover:bg-pink-100"
+            >
+              Products
+            </Link>
+            <Link
+              to="about"
+              smooth={true}
+              duration={500}
+              onClick={() => setIsMenuOpen(false)}
+              className="p-4 hover:text-pink-600 hover:bg-pink-100"
+            >
+              About
+            </Link>
+            <Link
+              to="contact"
+              smooth={true}
+              duration={500}
+              onClick={() => setIsMenuOpen(false)}
+              className="p-4 hover:text-pink-600 hover:bg-pink-100"
+            >
+              Contact
+            </Link>
+          </nav>
+        </div>
       </div>
     </header>
   );
